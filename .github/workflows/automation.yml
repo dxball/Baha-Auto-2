@@ -1,0 +1,21 @@
+name: GOGOGO
+
+on:
+  schedule:
+    - cron: "10 4,16 * * *"
+  workflow_dispatch:
+
+jobs:
+  automation:
+    name: 自動化
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Bahamut Automation
+        uses: JacobLinCool/Bahamut-Automation@action
+        with:
+          modules:  ${{ secrets.modules || 'report,ad_handler,login,sign,guild,answer,lottery,logout,discord,line_notify' }}
+          parameters: ${{ secrets.parameters || '{}' }}
+          secrets: ${{ secrets.secrets }}
+          browser: '{ "type": "webkit" }'
+      - uses: gautamkrishnar/keepalive-workflow@master
