@@ -35,8 +35,9 @@ modules:
 
 # 瀏覽器的設定
 browser:
-    type: webkit
+    type: chromium
     headless: true
+    args: ["--mute-audio"]
     firefoxUserPrefs:
         dom.webaudio.enabled: false
         media.volume_scale: 0
