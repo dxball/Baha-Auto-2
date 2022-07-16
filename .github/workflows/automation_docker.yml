@@ -20,6 +20,6 @@ jobs:
           secrets: ${{ secrets.SECRETS }}
 
       - name: Run Automation
-        run: docker run --rm -v "$(pwd)/merged-config.yml:/config.yml" jacoblincool/bahamut-automation
+        run: docker run --rm -v "$(pwd)/merged-config.yml:/config.yml" -e TZ=Asia/Taipei jacoblincool/bahamut-automation
 
       - uses: gautamkrishnar/keepalive-workflow@master
