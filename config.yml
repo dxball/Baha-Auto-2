@@ -38,6 +38,7 @@ browser:
     type: chromium
     headless: true
     args: ["--mute-audio"]
+    slowMo: 1000
     firefoxUserPrefs:
         dom.webaudio.enabled: false
         media.volume_scale: 0
