@@ -16,9 +16,9 @@ modules:
     sign:
     guild:
     answer:
-    lottery:
-        max_attempts: 20 # 每個最多嘗試 20 次
-        max_parallel: 3 # 並行執行的最大數量
+    #lottery:
+    #    max_attempts: 20 # 每個最多嘗試 20 次
+    #    max_parallel: 3 # 並行執行的最大數量
     del_mail:
         match: [{ title: "【勇者福利社】成功獲得抽獎資格通知信", sender: "sysop" }]
     logout:
@@ -37,8 +37,8 @@ modules:
 browser:
     type: chromium
     headless: true
-    args: ["--mute-audio"]
-    slowMo: 1000
+    #args: ["--mute-audio"]
+    #slowMo: 1000
     firefoxUserPrefs:
         dom.webaudio.enabled: false
         media.volume_scale: 0
