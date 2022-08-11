@@ -16,11 +16,15 @@ modules:
     sign:
     guild:
     answer:
-    #lottery:
-    #    max_attempts: 20 # 每個最多嘗試 20 次
-    #    max_parallel: 3 # 並行執行的最大數量
+    lottery:
+        max_attempts: 1 # 每個最多嘗試 20 次
+        max_parallel: 1 # 並行執行的最大數量
     del_mail:
-        match: [{ title: "【勇者福利社】成功獲得抽獎資格通知信", sender: "sysop" }]
+        match: 
+            - title: "【勇者福利社】成功獲得抽獎資格通知信"
+              sender: "sysop"
+            - title: "動畫瘋獲獎通知"
+              sender: "sysop"
     logout:
 
     # 以下是寄報告的部分
@@ -37,7 +41,12 @@ modules:
 browser:
     type: chromium
     headless: true
-    #args: ["--mute-audio"]
+    ignoreDefaultArgs: 
+        - "--enable-automation"
+    args: 
+        - "--disable-blink-features=AutomationControlled"
+        - "--disable-features=site-per-process,SitePerProcess"
+        - "--disable-site-isolation-trials"
     #slowMo: 1000
     firefoxUserPrefs:
         dom.webaudio.enabled: false
